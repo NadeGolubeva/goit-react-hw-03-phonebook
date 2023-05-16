@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
-// import { Label, Input } from './FindContact.styled';
+import css from './FindContact.module.css';
 
 export const FindContact = ({filter, onChangeFilter }) => {
     return (
         <>
-            <label>
+            <label
+            className={css.label}>
                 <p>
                      Find contact by name
                 </p>
@@ -13,7 +14,7 @@ export const FindContact = ({filter, onChangeFilter }) => {
                     type="text"
                     name="filter"
                     value={filter}
-                    
+                    className={css.input}
                 >
                 </input>
             </label>

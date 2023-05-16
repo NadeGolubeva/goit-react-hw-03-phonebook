@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 // import { Formik } from 'formik';
-// import { Label, Btn, Input } from './FormContact.styled';
+import css from './FormContact.module.css';
 
 export class FormContact extends Component {
   state = {
@@ -25,9 +25,11 @@ export class FormContact extends Component {
             this.setState({ name: '', number: '' });
           }}
         >
-          <label name="name">
+          <label name="name"
+          className={css.labelForm}>
             Name
             <input
+              className={css.formInput}
               type="text"
               name="name"
               onChange={this.onChangeInput}
@@ -38,9 +40,10 @@ export class FormContact extends Component {
             />
           </label>{' '}
           <br />
-          <label name="number">
+          <label name="number"
+           className={css.labelForm}>
             Number
-            <input
+            <input   className={css.formInput}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -51,7 +54,7 @@ export class FormContact extends Component {
             />
           </label>
           <br />
-          <button type="submit">Add contact</button>
+          <button   className={css.btnForm} type="submit">Add contact</button>
         </form>
       </>
     );
